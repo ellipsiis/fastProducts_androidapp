@@ -11,7 +11,7 @@ interface ProductApi {
     @GET
     fun getProducts(
         @Url url: String?
-    ) : Call<List<Product>>
+    ) : Call<ArrayList<Product>>
 
     @GET("cm/2022-2/product_detail.php")
     fun getProductDetail(

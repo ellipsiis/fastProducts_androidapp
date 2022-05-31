@@ -35,16 +35,17 @@ class MainActivity : AppCompatActivity() {
 
         val productsApi: ProductApi = retrofit.create(ProductApi::class.java)
 
-        val call:Call<List<Product>> = productsApi.getProducts("cm/2022-2/products.php")
+        val call:Call<ArrayList<Product>> = productsApi.getProducts("cm/2022-2/products.php")
 
 
-        call.enqueue(object:Callback<List<Product>>{
-            override fun onResponse(call: Call<List<Product>>, response: Response<List<Product>>) {
+        call.enqueue(object:Callback<ArrayList<Product>>{
+            override fun onResponse(call: Call<ArrayList<Product>>, response: Response<ArrayList<Product>>) {
 //                The server has connection
                 Log.d(LOGTAG,"Response of server ${response.toString()}")
                 Log.d(LOGTAG,"Data: ${response.body().toString()}")
                 binding.pbConnection.visibility = View.INVISIBLE
                 val tmpProduct: Product
+
                 val data = ArrayList<Product_Data>()
 
                 for(tmpProduct in response.body()!!)
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-            override fun onFailure(call: Call<List<Product>>, t: Throwable) {
+            override fun onFailure(call: Call<ArrayList<Product>>, t: Throwable) {
                 Log.d(LOGTAG,"Error connection")
                 Toast.makeText(this@MainActivity,"Without connection",Toast.LENGTH_LONG).show()
                 binding.pbConnection.visibility = View.INVISIBLE

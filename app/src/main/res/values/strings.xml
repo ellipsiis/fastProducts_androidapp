@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Fast Products</string>
+    <string name="name_title">Fast Products Store</string>
+    <string name="content_description_none"></string>
 </resources>
