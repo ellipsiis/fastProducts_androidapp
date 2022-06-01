@@ -15,6 +15,6 @@ interface ProductApi {
 
     @GET("cm/2022-2/product_detail.php")
     fun getProductDetail(
-        @Query("id") id_product: String?
+        @Query("id") id: String?
     ): Call<ProductDetail>
 }

@@ -1,5 +1,6 @@
 package com.tallercmovil.fastproducts.view.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 {
                     val productTMP = Product_Data(tmpProduct.id_sn!!.toLong(),"${tmpProduct.name_sn}","${tmpProduct.provider_sn}","${tmpProduct.price_sn}","${tmpProduct.thumbnail_sn}")
                     data.add(productTMP)
-                    Toast.makeText(this@MainActivity,"Nombre: ${tmpProduct.name_sn}",Toast.LENGTH_LONG).show()
+//                    Toast.makeText(this@MainActivity,"Nombre: ${tmpProduct.name_sn}",Toast.LENGTH_LONG).show()
                 }
 
 
@@ -88,7 +89,19 @@ class MainActivity : AppCompatActivity() {
 
             val product = adapterView.adapter.getItem(i) as Product_Data
 
-            Toast.makeText(this@MainActivity,"Click: title: ${product.title}", Toast.LENGTH_LONG).show()
+            val parametros = Bundle()
+
+            parametros.putString("id",product.id.toString())
+
+            Toast.makeText(this@MainActivity,"As Product_Data: ${product.id}",Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this@MainActivity,Detail::class.java)
+
+            intent.putExtras(parametros)
+
+            startActivity(intent)
+
+//            Toast.makeText(this@MainActivity,"Click: title: ${product.title}", Toast.LENGTH_LONG).show()
         }
     }
 }
