@@ -6,7 +6,7 @@ class ProductDetail {
     @SerializedName("name")
     var name_detail: String? = null
 
-    @SerializedName("image_url")
+    @SerializedName("imag_url")
     var image_detail: String? = null
 
     @SerializedName("desc")
