@@ -7,6 +7,19 @@
     android:background="@color/white"
     tools:context=".view.ui.activities.Detail">
 
+    <ImageView
+        android:id="@+id/imShopCartDetail"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:contentDescription="@string/content_description_none"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.856"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="0dp"
@@ -23,13 +36,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ProgressBar
+        android:id="@+id/pbConnection2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="114dp"
+        android:layout_height="112dp"
+        android:indeterminateTint="@color/red_marron"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
-        android:layout_height="585dp"
+        android:layout_height="666dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,7 +79,7 @@
                 android:id="@+id/ivThumbProduct"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/content_description_none"/>
+                android:contentDescription="@string/content_description_none" />
 
             <TextView
                 android:id="@+id/tvLongDesc"

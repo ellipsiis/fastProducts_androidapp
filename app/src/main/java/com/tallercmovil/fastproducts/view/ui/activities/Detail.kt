@@ -43,7 +43,7 @@ class Detail : AppCompatActivity() {
         call.enqueue(object: Callback<ProductDetail>{
             override fun onResponse(call: Call<ProductDetail>, response: Response<ProductDetail>) {
                 with(binding){
-//                    pbConnection2.visibility = View.INVISIBLE
+                    pbConnection2.visibility = View.INVISIBLE
 
                     Glide.with(this@Detail).
                             load(response.body()?.image_detail)
@@ -52,14 +52,14 @@ class Detail : AppCompatActivity() {
                     tvTitleProduct.text = response.body()?.name_detail
                     tvLongDesc.text = response.body()?.desc_detail
                 }
-                Toast.makeText(this@Detail,"Successful", Toast.LENGTH_LONG).show()
+//                Toast.makeText(this@Detail,"Successful", Toast.LENGTH_LONG).show()
 
             }
 
             override fun onFailure(call: Call<ProductDetail>, t: Throwable) {
                 Log.d(LOGTAG,"Error connection")
-                Toast.makeText(this@Detail,"Without connection", Toast.LENGTH_LONG).show()
-//                binding.pbConnection2.visibility = View.INVISIBLE
+//                Toast.makeText(this@Detail,"Without connection", Toast.LENGTH_LONG).show()
+                binding.pbConnection2.visibility = View.INVISIBLE
             }
 
         })

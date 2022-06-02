@@ -93,8 +93,6 @@ class MainActivity : AppCompatActivity() {
 
             parametros.putString("id",product.id.toString())
 
-            Toast.makeText(this@MainActivity,"As Product_Data: ${product.id}",Toast.LENGTH_LONG).show()
-
             val intent = Intent(this@MainActivity,Detail::class.java)
 
             intent.putExtras(parametros)
