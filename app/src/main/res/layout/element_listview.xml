@@ -106,7 +106,7 @@
         android:fontFamily="@font/arimo"
         android:gravity="center_vertical"
         android:paddingStart="10sp"
-        android:textColor="@color/gray_carbon"
+        android:textColor="@color/red_marron_dark"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"

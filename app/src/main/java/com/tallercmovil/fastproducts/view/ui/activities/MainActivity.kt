@@ -8,7 +8,6 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
 import androidx.core.view.get
-import androidx.lifecycle.MutableLiveData
 import com.tallercmovil.fastproducts.view.adapter.Adapter
 import com.tallercmovil.fastproducts.databinding.ActivityMainBinding
 import com.tallercmovil.fastproducts.models.Product
@@ -51,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
                 for(tmpProduct in response.body()!!)
                 {
-                    val productTMP = Product_Data(tmpProduct.id_sn!!.toLong(),"${tmpProduct.name_sn}","${tmpProduct.provider_sn}","${tmpProduct.price_sn}","${tmpProduct.thumbnail_sn}")
+                    val productTMP = Product_Data(tmpProduct.id_sn!!.toLong(),"${tmpProduct.name_sn}","${tmpProduct.provider_sn}","$ ${tmpProduct.price_sn}","${tmpProduct.thumbnail_sn}")
                     data.add(productTMP)
 //                    Toast.makeText(this@MainActivity,"Nombre: ${tmpProduct.name_sn}",Toast.LENGTH_LONG).show()
                 }
